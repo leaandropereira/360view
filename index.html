@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A simple example</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+        #panorama {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Lista suspensa para selecionar a imagem -->
+<!-- Contêiner do panorama -->
+<div id="panorama">
+
+
+</div>
+
+<script>
+    // Inicializar o panorama
+    var viewer = pannellum.viewer('panorama', {
+        "type": "equirectangular",
+        "panorama": "pngs/img1.jpg"  // Imagem inicial
+    });
+
+    // Função para trocar a imagem
+    function changeImage() {
+        var selectedImage = document.getElementById("image-selector").value;
+        viewer.load({
+        "type": "equirectangular",
+        "panorama": selectedImage
+    });
+    }
+</script>
+
+</body>
+</html>
